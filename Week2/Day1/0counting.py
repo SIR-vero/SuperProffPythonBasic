@@ -1,0 +1,1 @@
+# Take an number as input (say N) and print the counting from 1 to N

@@ -1,0 +1,1 @@
+# Take an number as input (say N) and print all the EVEN numbers between 1 and N
