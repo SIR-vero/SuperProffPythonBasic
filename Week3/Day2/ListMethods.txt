@@ -1,0 +1,11 @@
+'append',
+'clear',
+'copy',
+'count',		-> counts the occurrence of an element.
+'extend',		-> extnds the list by adding another iterable at the end.
+'index',		-> returns the index of first occurence of the arg.
+'insert',		-> insert given object before the given index.
+'pop',
+'remove',		-> remove the first occurrence of the given object from the list.
+'reverse',
+'sort'
