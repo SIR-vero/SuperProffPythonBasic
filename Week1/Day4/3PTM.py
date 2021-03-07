@@ -19,3 +19,7 @@ elif (maths < 40 and maths >= 30 and sci < 55) or (sci < 40 and sci >= 30 and ma
 	print("Call your parents ")
 else:
 	print("No need to call your parents ")
+	
+"""
+alskdsojf
+"""
