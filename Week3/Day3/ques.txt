@@ -1,0 +1,7 @@
+2)	Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same.
+4)	Check if a given List is strictly increasing. Eg. 1 2 3 4 5 10 11 13 20 is strictly increasing. 1 54 100 99 95 101 is not strictly increasing.
+1)	Given a string determine whether it is a PALINDROME or not. A palindrome is a string whose reverse is same as the original string. E.g. "tenet" is a palindrome, "tarush" is not a palindrome.
+2) Given some number of strings inside a list, find the number of all strings which have all the characters similar. 
+	For example [aaa, bab, cad, ccc], aaa and ccc are the strings with similar characters.
+3) Given some number of strings inside a list, find the strings with the count of vowels greater than or equal to 5.
+	For example [aeiouzab, abcdeiou, aei, mnop], only "aeiouzab" and "abcdeiou" both have five or more than five vowels.

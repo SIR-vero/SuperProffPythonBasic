@@ -1,5 +1,6 @@
-1)	Write a Python program to get the largest number from a list.
+#1)	Write a Python program to get the largest number from a list.
 2)	Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings.
-3)	Given the heights of various points on a terrain identify if a point is hill. A hill is a point which is greater than it's adjacent points. Eg. 1 3 2	here point '3' is a hill.
+#3)	Given the heights of various points on a terrain identify if a point is hill. A hill is a point which is greater than it's adjacent points. Eg. 1 3 2	here point '3' is a hill.
 4)	Check if a given List is strictly increasing. Eg. 1 2 3 4 5 10 11 13 20 is strictly increasing. 1 54 100 99 95 101 is not strictly increasing.
-5)	Given N numbers take out the prime numbers and put them in a separate list.
+
+#5)	Given N numbers take out the prime numbers and put them in a separate list.
