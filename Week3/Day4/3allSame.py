@@ -1,10 +1,10 @@
 n = int(input("How Many string you want to enter: "))
 words = list()
 index = 1
-while index <= n:
+for index in range(1, n+1):
 	word = input("Enter a word: ")
 	words.append(word)
-	index = index + 1
+	#index = index + 1
 	
 end = n-1
 index = 0
@@ -14,7 +14,7 @@ index = 0
 # 'aaa'
 #  012
 similar = list()
-while index <= end:
+for index in range(0, n):
 	count_of_first_char = words[index].count(words[index][0])
 	lenght = len(words[index])
 	if lenght == count_of_first_char:
@@ -23,6 +23,5 @@ while index <= end:
 	else:
 		print(words[index], " does not have all similar char")
 	
-	index = index + 1
 	
 print ("similar words are ", similar)
