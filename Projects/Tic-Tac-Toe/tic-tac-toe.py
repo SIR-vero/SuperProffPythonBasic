@@ -7,36 +7,28 @@ import random
 #---+---+---
 # 20 | h | 22 
 
-in_put = [["a", "b", "c"],["d", "e", "f"],["g", "h", "i"]]
+#in_put = [0,1,2,3,4,5,6,7,8]
+in_put = list(range(9))
 
 def draw_board(in_put):	
 	os.system('cls')
 	
-	print(" ",in_put[0][0]," | ",in_put[0][1]," | ",in_put[0][2],sep = "")
+	print(" ",in_put[0]," | ",in_put[1]," | ",in_put[2],sep = "")
 	print("---+---+---")
-	print(" ",in_put[1][0]," | ",in_put[1][1]," | ",in_put[1][2],sep = "")
+	print(" ",in_put[3]," | ",in_put[4]," | ",in_put[5],sep = "")
 	print("---+---+---")
-	print(" ",in_put[2][0]," | ",in_put[2][1]," | ",in_put[2][2],sep = "")
+	print(" ",in_put[6]," | ",in_put[7]," | ",in_put[8],sep = "")
 	
 def validate(x, in_put):
-	if x == 'a' and in_put[0][0] == 'a':
-		return True
-	elif x == 'b' and in_put[0][1] == 'b':
-		return True
-	elif x == 'c' and in_put[0][2] == "c":
-		return True
-	elif x == 'd' and in_put[1][0] == "d":
-		return True
-	elif x == 'e' and in_put[1][1] == "e":
-		return True
-	elif x == 'f' and in_put[1][2] == "f":
-		return True
-	elif x == 'g' and in_put[2][0] == "g":
-		return True
-	elif x == 'h' and in_put[2][1] == "h":
-		return True
-	elif x == 'i' and in_put[2][2] == "i":
-		return True
+	try:
+		x = int(x)
+	except Exception as e:
+		print("\aPlease enter a number ")
+		return False
+	
+	for i in range(9):
+		if x == i and in_put[i] == i;
+			return True
 		
 	return False
 		
@@ -46,65 +38,38 @@ def game_input(moves, player1, player2, player1_sym, player2_sym):
 		draw_board(in_put)
 		print(player1, '(', player1_sym, ')', "  your turn ")
 		x = input("Enter a valid position: ")
-		x = x.lower()
+		#x = x.lower()
 		while validate(x, in_put) == False:
 			draw_board(in_put)
 			print(player1, '(', player1_sym, ')', "\aPlease enter a valid position: ")
 			x = input()
-			x = x.lower()
-		if x == 'a':
-			in_put[0][0] = player1_sym
-		elif x == 'b':
-			in_put[0][1] = player1_sym
-		elif x == 'c':
-			in_put[0][2] = player1_sym
-		elif x == 'd':
-			in_put[1][0] = player1_sym
-		elif x == 'e':
-			in_put[1][1] = player1_sym
-		elif x == 'f':
-			in_put[1][2] = player1_sym
-		elif x == 'g':
-			in_put[2][0] = player1_sym
-		elif x == 'h':
-			in_put[2][1] = player1_sym
-		elif x == 'i':
-			in_put[2][2] = player1_sym
+			#x = x.lower()
+		for i in range(9):
+			if int(x) == i:
+				in_put[i] = player1_sym
 	else :
 		draw_board(in_put)
 		print(player2, '(', player2_sym, ')', "  your turn ")
 		x = input("Enter a valid position: ")
-		x = x.lower()
+		#x = x.lower()
 		while validate(x, in_put) == False:
 			draw_board(in_put)
 			print(player2, '(', player2_sym, ')', "\aPlease enter a valid position: ")
 			x = input()
-			x = x.lower()
-		if x == 'a':
-			in_put[0][0] = player2_sym
-		elif x == 'b':
-			in_put[0][1] = player2_sym
-		elif x == 'c':
-			in_put[0][2] = player2_sym
-		elif x == 'd':
-			in_put[1][0] = player2_sym
-		elif x == 'e':
-			in_put[1][1] = player2_sym
-		elif x == 'f':
-			in_put[1][2] = player2_sym
-		elif x == 'g':
-			in_put[2][0] = player2_sym
-		elif x == 'h':
-			in_put[2][1] = player2_sym
-		elif x == 'i':
-			in_put[2][2] = player2_sym
+			#x = x.lower()
+		for i in range(9):
+			if int(x) == i:
+				in_put[i] = player2_sym
 		
 
 def check_win(in_put):
+	
 	if in_put[0][0] == player1_sym and in_put[0][1] == player1_sym and in_put[0][2] == player1_sym:
 		return 1
 	elif in_put[0][0] == player2_sym and in_put[0][1] == player2_sym and in_put[0][2] == player2_sym:
 		return 2
+		
+	
 	
 	if in_put[1][0] == player1_sym and in_put[1][1] == player1_sym and in_put[1][2] == player1_sym:
 		return 1
