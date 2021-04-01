@@ -59,8 +59,19 @@ def animate_dice(x):
 		time.sleep(0.3)
 		os.system('cls')
 	draw_dice(x)
+	print("You rolled a", x)
 	
 
+def validate(x):
+	try :
+		x = int(x)
+	except Exception as e:
+		return False
+	
+	if x == 0 or x == 1:
+		return True
+	
+	return False
 
 
 def game_input(moves, player1, player2):
@@ -69,6 +80,8 @@ def game_input(moves, player1, player2):
 		x = input()
 		while validate(x) == False:
 			x = input("\aplease enter 0 or 1: ")
+		
+		x = int(x)
 		
 		if x == 1:
 			return 0
@@ -114,12 +127,35 @@ else :
 
 moves = 1
 while player1_score < max_score and player2_score < max_score:
-	game_input(moves, player1, player2)
+	rolled_number = game_input(moves, player1, player2)
+	if rolled_number == 0:
+		if moves % 2 == 1:
+			print(player1, " passed")
+		else:
+			print(player2, " passed")
+	else:
+		if moves % 2 == 1:
+			if rolled_number == 1:
+				player1_score = 0
+				print(player1, "rolled a one hence score has been set to zero ")
+			else:
+				player1_score = player1_score + rolled_number
+		else:
+			if rolled_number == 1:
+				player2_score = 0
+				print(player2, "rolled a one hence score has been set to zero ")
+			else:
+				player2_score = player2_score + rolled_number
+	
+	print("\t\t\t\t\t\t\t\t\t\t\t\t\t", player1, "score: ", player1_score)
+	print("\t\t\t\t\t\t\t\t\t\t\t\t\t", player2, "score: ", player2_score)
+	
+	#os.system('cls')
+	
+	moves = moves + 1
+	
 
-
-
-
-
-
-
-
+if player1_score >= max_score:
+	print(player1, "WON!!")
+else :
+	print(player2, "WON!!")
