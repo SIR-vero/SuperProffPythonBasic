@@ -1,4 +1,4 @@
-import pygame, os, time
+import pygame, os
 
 pygame.init()
 
@@ -115,7 +115,23 @@ def draw_cross(row, col):
 def draw_circle(row, col):
 	pygame.draw.circle(screen, (0,0,0), (col*200 + 100, row*200 + 100), 80, 20)
 
+def draw_scoreboard():
+	pygame.draw.rect(screen, (0, 255, 255), (601, 0, 400, 600))
+	font = pygame.font.Font("ComicSansMS3.ttf", 30)
+	text = font.render("player1 : X", True, (0,0,0))
+	screen.blit(text, (800, 100))
+	text = font.render("player2 : O", True, (0,0,0))
+	screen.blit(text, (800, 150))
+
+def draw_reset_button():
+	pygame.draw.rect(screen, (211, 211, 211), (611, 10, 150, 50))
+	font = pygame.font.Font("ComicSansMS3.ttf", 30)
+	text = font.render("RESET", True, (0,0,0))
+	screen.blit(text, (631, 15))
+
 draw_lines()
+draw_scoreboard()
+draw_reset_button()
 
 play = True
 running = True
@@ -139,14 +155,23 @@ while running:
 				check = check_win(board)
 				if check[1] == 1:
 					print("player 1 WON!!!")
+					font = pygame.font.Font("ComicSansMS3.ttf", 30)
+					text = font.render("player1 WON!!!", True, (0,0,0))
+					screen.blit(text, (700, 270))
 					draw_win_line(check[0])
 					play = False
 				elif check[1] == 2:
 					print("player 2 WON!!!")
+					font = pygame.font.Font("ComicSansMS3.ttf", 30)
+					text = font.render("player2 WON!!!", True, (0,0,0))
+					screen.blit(text, (700, 270))
 					draw_win_line(check[0])
 					play = False
 				elif moves == 9:
 					print("DRAW!!!")
+					font = pygame.font.Font("ComicSansMS3.ttf", 30)
+					text = font.render("DRAW", True, (0,0,0))
+					screen.blit(text, (700, 270))
 					play = False
 				moves = moves + 1
 	
