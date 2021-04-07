@@ -1,4 +1,4 @@
-import pygame, os
+import pygame, os, time
 
 pygame.init()
 
@@ -124,7 +124,7 @@ def draw_scoreboard():
 	screen.blit(text, (800, 150))
 
 def draw_reset_button():
-	pygame.draw.rect(screen, (211, 211, 211), (611, 10, 150, 50))
+	pygame.draw.rect(screen, (211, 211, 211), (611, 10, 150, 50)) # 611 761     # 10 60
 	font = pygame.font.Font("ComicSansMS3.ttf", 30)
 	text = font.render("RESET", True, (0,0,0))
 	screen.blit(text, (631, 15))
@@ -147,9 +147,26 @@ while running:
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			x = event.pos[0]
 			y = event.pos[1]
-			#print(x, y)
+			print(x, y)
 			row = y//200
 			col = x//200
+			print(row, col)
+			if x >= 600:
+				if (x >= 611 and x <= 761) and (y >= 10 and y <= 60):
+					print("reseting")
+					
+					screen.fill((255, 255, 0))
+					draw_lines()
+					draw_scoreboard()
+					draw_reset_button()
+					
+					moves = 1
+					play = True
+					board = [[0,0,0],
+							 [0,0,0],
+							 [0,0,0]]
+					
+				continue
 			if validate(row, col) and play:
 				game_input(row, col, moves)
 				check = check_win(board)
