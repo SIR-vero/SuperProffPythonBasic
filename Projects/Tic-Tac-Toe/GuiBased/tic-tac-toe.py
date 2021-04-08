@@ -81,10 +81,10 @@ def draw_win_line(line):
 		pygame.draw.line(screen, (0,0,0), (599, 0), (0, 599), 30)
 	
 def draw_lines():
-	pygame.draw.line(screen, (0,0,0), (200, 0), (200, 599), 10)
-	pygame.draw.line(screen, (0,0,0), (400, 0), (400, 599), 10)
-	pygame.draw.line(screen, (0,0,0), (0, 200), (599, 200), 10)
-	pygame.draw.line(screen, (0,0,0), (0, 400), (599, 400), 10)
+	pygame.draw.line(screen, (0,0,0), (200, 10), (200, 589), 10)
+	pygame.draw.line(screen, (0,0,0), (400, 5), (400, 589), 10)
+	pygame.draw.line(screen, (0,0,0), (10, 200), (589, 200), 10)
+	pygame.draw.line(screen, (0,0,0), (10, 400), (589, 400), 10)
 
 def validate(row, col):
 	if board[row][col] == 0:
